@@ -4,7 +4,7 @@ class Target {
   boolean alive = true;
 
   PVector position, target;
-  PVector enemySize = new PVector(150, 40);
+  PVector targetHatSize = new PVector(150, 40);
 
   float movementSpeed = 0.01;
   float xMargin = 500;
@@ -27,11 +27,10 @@ class Target {
     target = new PVector(x2, y);  
   }
   
-
   
   void draw() {
     rectMode(CENTER);
-    rect(position.x, position.y, enemySize.x, enemySize.y);
+    rect(position.x, position.y, targetHatSize.x, targetHatSize.y);
     
   }
   
