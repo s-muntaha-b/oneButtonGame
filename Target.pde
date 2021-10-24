@@ -1,37 +1,50 @@
 class Target {
   
+  PImage hatTarget;
+  
   boolean left;
-  boolean alive = true;
+  boolean on = true;
 
   PVector position, target;
   PVector targetHatSize = new PVector(150, 40);
 
   float movementSpeed = 0.01;
-  float xMargin = 500;
-  float yMargin = 150;
+  float marginX = 500;
+  float marginY = 150;
 
   Target() {
-    float pickSide = random(1);
-    float y = random(yMargin, height-yMargin*2);
+    hatTarget = loadImage("witchHatOn.png");
+    hatTarget.resize(hatTarget.width/3, hatTarget.height/3); 
+    float y = random(marginX, height-marginY*2);
+    float side = random(1);
     float x1, x2;
-    if (pickSide < 0.5) {
+    if (side < 0.8) {
       left = true;
-      x1 = -xMargin;
-      x2 = width + xMargin;
+      x1 = -marginX;
+      x2 = width + marginX;
     } else {
       left = false;
-      x1 = width + xMargin;
-      x2 = -xMargin;
+      x1 = width + marginX;
+      x2 = -marginX;
     }
-    position = new PVector(x1, y);  
     target = new PVector(x2, y);  
+    position = new PVector(x1, y);  
   }
-  
-  
-  void draw() {
-    rectMode(CENTER);
-    rect(position.x, position.y, targetHatSize.x, targetHatSize.y);
+
+  void update() {
+    if (position.dist(target) < 5) on = false;
     
+    for (Bullets bullet : shooter.bullets) {
+      if (on && hitDetect(position, bullet.position, targetHatSize)) {
+        on = false;
+        destroy.add(new destroy(position.x, position.y));
+      }
+    }
+
+    }
+  void draw() {
+    imageMode(CENTER);
+    image(hatTarget, position.x, position.y, targetHatSize.x, targetHatSize.y);
   }
   
   void run() {

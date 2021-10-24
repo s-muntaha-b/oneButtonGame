@@ -11,7 +11,7 @@ class Shooter {
     bullets = new ArrayList<Bullets>();
     
     staff = loadImage("staff.png");
-    staff.resize(staff.width/3, staff.height/3);
+    staff.resize(staff.width/2, staff.height/2);
     imageMode(CENTER);
   }
   
