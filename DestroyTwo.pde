@@ -1,4 +1,4 @@
-class Destroy{
+class destroyTwo{
   
   PImage hatTargetKill;
   PVector pos;
@@ -8,8 +8,8 @@ class Destroy{
   int time;
   int life = 450;
   
-  Destroy(float x, float y) {
-    hatTargetKill = loadImage("witchHatOff.png");
+  destroyTwo(float x, float y) {
+    hatTargetKill = loadImage("witchHatOffTwo.png");
     hatTargetKill.resize(hatTargetKill.width/3, hatTargetKill.height/3);
     imageMode(CENTER);
   

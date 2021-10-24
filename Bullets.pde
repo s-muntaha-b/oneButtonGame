@@ -1,11 +1,14 @@
-class Bullets {
+class Bullets{
   
   PVector position;
   PImage starBullet;
+  
   float rot;
   float velocity = 14;
+  
   int timestamp;
   int life = 800;
+  
   boolean on = true;
   
   Bullets(float x, float y, float _rot) {

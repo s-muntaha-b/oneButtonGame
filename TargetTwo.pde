@@ -1,4 +1,4 @@
-class Target{
+class targetTwo{
   
   PImage hatTarget;
   
@@ -12,8 +12,8 @@ class Target{
   float marginX = 550;
   float marginY = 200;
 
-  Target() {
-    hatTarget = loadImage("witchHatOn.png");
+  targetTwo() {
+    hatTarget = loadImage("witchHatOnTwo.png");
     hatTarget.resize(hatTarget.width/3, hatTarget.height/3); 
     
     float side = random(1);

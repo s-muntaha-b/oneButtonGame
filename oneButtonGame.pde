@@ -7,8 +7,12 @@ float friction = 0.99;
 float ground;
 
 Shooter shooter;
-ArrayList<Target> hatOff;
-ArrayList<Destroy> destruction;
+
+ArrayList<Target> hatOffs;
+ArrayList<Destroy> destroying;
+ArrayList<targetTwo> hatOffsTwo;
+ArrayList<destroyTwo> destroyingTwo;
+
 int interval = 1000;
 int time = 0;
 
@@ -19,41 +23,44 @@ void setup() {
   ground = height;
   
   shooter = new Shooter(width/2, height - 100);
-  hatOff = new ArrayList<Target>();
-  destruction = new ArrayList<Destroy>();
+  hatOffs = new ArrayList<Target>();
+  destroying = new ArrayList<Destroy>();
+  destroyingTwo = new ArrayList<destroyTwo>();
 
-  destroy = loadImage(".png");
+  destroy = loadImage("witchHatOff.png");
   destroy.resize(300, 300);
+  destroyTwo = loadImage("witchHatOff.png");
+  destroyTwo.resize(300, 300);
 }
 
 void draw() {
   background(bg);
     
-  int t = millis();
+  int s = millis();
   
-  if (t > time + interval) {
-    hatOff.add(new Target());
-    time = t;
+  if (s > time + interval) {
+    hatOffs.add(new Target());
+    time = s;
   }
   shooter.run();
   
-  for (int i=hatOff.size()-1; i>=0; i--) {
-    Target plane = hatOff.get(i);
+  for (int i=hatOffs.size()-1; i>=0; i--) {
+    Target hatOff = hatOffs.get(i);
     
     if (hatOff.on) {
       hatOff.run();
     } else {
-      hatOff.remove(i);
+      hatOffs.remove(i);
     }
   }
   
-  for (int i=destruction.size()-1; i>=0; i--) {
-    Destroy plane = destruction.get(i);
+  for (int i=destroying.size()-1; i>=0; i--) {
+    Destroy destruction = destroying.get(i);
     
     if (destruction.on) {
       destruction.run();
     } else {
-      destruction.remove(i);
+      destroying.remove(i);
     }
   }
   

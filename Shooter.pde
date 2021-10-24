@@ -2,8 +2,10 @@ class Shooter {
 
   PVector position;
   PImage staff; //image from http://pixelartmaker.com/art/4a951cd3616efa8
+  
   float rot = 0;
   float rotDelta = 3;
+  
   ArrayList<Bullets> bullets;
   
   Shooter(float x, float y) {
