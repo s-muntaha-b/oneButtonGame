@@ -3,15 +3,16 @@ class Bullets {
   PVector position;
   PImage starBullet;
   float rot;
-  float velocity = 10;
+  float velocity = 14;
   int timestamp;
-  int life = 1000;
+  int life = 800;
   boolean on = true;
   
   Bullets(float x, float y, float _rot) {
     position = new PVector(x, y);
-    rot = _rot;
     timestamp = millis();
+    rot = _rot;
+
     
     starBullet = loadImage("starBullet.png");
     starBullet.resize(starBullet.width/8, starBullet.height/8);
