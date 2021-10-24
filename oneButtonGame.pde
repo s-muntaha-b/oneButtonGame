@@ -22,17 +22,46 @@ void setup() {
   hatOff = new ArrayList<Target>();
   destruction = new ArrayList<Destroy>();
 
-  destroy = loadImage("explosion.png");
+  destroy = loadImage(".png");
   destroy.resize(300, 300);
 }
 
 void draw() {
   background(bg);
     
+  int t = millis();
+  
+  if (t > time + interval) {
+    hatOff.add(new Target());
+    time = t;
+  }
   shooter.run();
   
+  for (int i=hatOff.size()-1; i>=0; i--) {
+    Target plane = hatOff.get(i);
+    
+    if (hatOff.on) {
+      hatOff.run();
+    } else {
+      hatOff.remove(i);
+    }
+  }
+  
+  for (int i=destruction.size()-1; i>=0; i--) {
+    Destroy plane = destruction.get(i);
+    
+    if (destruction.on) {
+      destruction.run();
+    } else {
+      destruction.remove(i);
+    }
+  }
+  
   println("Number of bullets: " + shooter.bullets.size());
+  
+  surface.setTitle("" + frameRate);
 }
+
 
 
   boolean hitDetect(PVector p1, PVector p2, PVector hit) {

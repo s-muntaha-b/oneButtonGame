@@ -12,7 +12,6 @@ class Bullets {
     position = new PVector(x, y);
     timestamp = millis();
     rot = _rot;
-
     
     starBullet = loadImage("starBullet.png");
     starBullet.resize(starBullet.width/8, starBullet.height/8);

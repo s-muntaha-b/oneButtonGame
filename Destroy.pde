@@ -14,7 +14,6 @@ class Destroy {
     time = millis();
     pos = new PVector(x, y);
     
-    
   }
   
   void update() {
@@ -32,6 +31,9 @@ class Destroy {
     float sizeVal = 100 + random(-50, 50);
     ellipse(pos.x, pos.y, sizeVal, sizeVal);
   }
-  
+  void run() {
+    update();
+    draw();
+  }
   
 }

@@ -37,7 +37,7 @@ class Target {
     for (Bullets bullet : shooter.bullets) {
       if (on && hitDetect(position, bullet.position, targetHatSize)) {
         on = false;
-        destroy.add(new destroy(position.x, position.y));
+        destruction.add(new Destroy(position.x, position.y));
       }
     }
 
