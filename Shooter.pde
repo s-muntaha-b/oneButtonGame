@@ -3,7 +3,7 @@ class Shooter {
   PVector position;
   PImage staff; //image from http://pixelartmaker.com/art/4a951cd3616efa8
   float rot = 0;
-  float rotDelta = 2;
+  float rotDelta = 3;
   ArrayList<Bullets> bullets;
   
   Shooter(float x, float y) {
@@ -17,12 +17,10 @@ class Shooter {
   
   void update() {
     rot += rotDelta;    
-    if (rot < -90 || rot > 90) rotDelta *= -1;  
-    
-    // remove all bullets that are no longer alive
-    for (int i=bullets.size()-1; i>=0; i--) {
+    if (rot < -150 || rot > 80) rotDelta *= -1;  
+        for (int i=bullets.size()-1; i>=0; i--) {
       Bullets bullet = bullets.get(i);
-      if (bullet.alive) {
+      if (bullet.on) {
         bullet.run();
       } else {
         bullets.remove(i);
