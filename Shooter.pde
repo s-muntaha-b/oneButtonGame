@@ -19,7 +19,7 @@ class Shooter {
   
   void update() {
     rot += rotDelta;    
-    if (rot < -150 || rot > 80) rotDelta *= -1;  
+    if (rot < -150 || rot > 90) rotDelta *= -1;  
         for (int i=bullets.size()-1; i>=0; i--) {
       Bullets bullet = bullets.get(i);
       if (bullet.on) {

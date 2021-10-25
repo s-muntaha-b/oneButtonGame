@@ -7,7 +7,7 @@ class Bullets{
   float velocity = 18;
   
   int timestamp;
-  int life = 800;
+  int life = 900;
   
   boolean on = true;
   
