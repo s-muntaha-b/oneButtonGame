@@ -4,7 +4,7 @@ class Bullets{
   PImage starBullet;
   
   float rot;
-  float velocity = 14;
+  float velocity = 18;
   
   int timestamp;
   int life = 800;

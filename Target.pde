@@ -8,9 +8,9 @@ class Target{
   PVector position, target;
   PVector targetHatSize = new PVector(250, 150);
 
-  float movementSpeed = 0.007;
-  float marginX = 550;
-  float marginY = 100;
+  float movementSpeed = 0.009;
+  float marginX = random(100, 900);
+  float marginY = random(300, 900);
  
 
   Target() {
