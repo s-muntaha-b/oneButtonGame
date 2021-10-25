@@ -24,7 +24,7 @@ class Bullets{
   void update() {
     // reference from https://www.emanueleferonato.com/2007/04/28/create-a-flash-artillery-game-step-1/
     position.x += velocity * sin(radians(rot));
-    position.y -= velocity * cos(radians(rot));
+    position.y -= velocity * cos(radians(rot)); //// referenced from class repo, Bullet 
 
     if (on && millis() > timestamp + life) on = false;
   }

@@ -28,7 +28,7 @@ class Target{
     } else {
       left = false;
       x1 = width + marginX;
-      x2 = -marginX;
+      x2 = -marginX; // referenced from class repo, Enemy 
     }
     target = new PVector(x2, y);  
     position = new PVector(x1, y);  
@@ -40,7 +40,7 @@ class Target{
     for (Bullets bullet : shooter.bullets) {
       if (on && hitDetect(position, bullet.position, targetHatSize)) {
         on = false;
-        destroying.add(new Destroy(position.x, position.y));
+        destroying.add(new Destroy(position.x, position.y)); // referenced from class repo, Enemy 
       }
     }
     if (on) position.lerp(target, movementSpeed);

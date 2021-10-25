@@ -5,8 +5,8 @@ String gameStart; // code for gameStart refrenced from https://www.youtube.com/w
 
 float gravity = 0.4;
 float GravityDel = 0.03;
-float friction = 0.99;
-float ground;
+float friction = 0.99; // referenced from class repo, Artillery02 
+float ground;  
 
 Shooter shooter;
 
@@ -51,7 +51,7 @@ void draw() {
     if (hatOff.on) {
       hatOff.run();
     } else {
-      hatOffs.remove(i);
+      hatOffs.remove(i); // referenced from class repo, Artillery02 
     }
   }
   
@@ -61,7 +61,7 @@ void draw() {
     if (destruction.on) {
       destruction.run();
     } else {
-      destroying.remove(i);
+      destroying.remove(i); // referenced from class repo, Artillery02 
     }
   }
   
@@ -77,5 +77,5 @@ void draw() {
     return true;
   } else {
     return false;
-  }
+  } // referenced from class repo, Artillery02 
 }

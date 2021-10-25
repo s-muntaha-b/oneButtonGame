@@ -17,7 +17,7 @@ class Shooter {
     imageMode(CENTER);
   }
   
-  void update() {
+  void update() { 
     rot += rotDelta;    
     if (rot < -150 || rot > 90) rotDelta *= -1;  
         for (int i=bullets.size()-1; i>=0; i--) {
@@ -26,7 +26,7 @@ class Shooter {
         bullet.run();
       } else {
         bullets.remove(i);
-      }
+      } // referenced from class repo, Cannon 
     }
   }
   

@@ -30,8 +30,8 @@ class Destroy{
     popMatrix();
     noStroke();
     fill(random(100), 104);
-    float sizeVal = 150 + random(-25, 25);
-    ellipse(pos.x, pos.y, sizeVal, sizeVal);
+    float sizeVal = 150 + random(-25, 25); 
+    ellipse(pos.x, pos.y, sizeVal, sizeVal); // referenced from class repo, Explosion 
   }
   void run() {
     update();
