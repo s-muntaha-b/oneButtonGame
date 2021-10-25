@@ -1,6 +1,8 @@
 PImage bg;
 PImage destroy;
 
+String gameStart; // code for gameStart refrenced from https://www.youtube.com/watch?v=JwQ43aBGz0E
+
 float gravity = 0.4;
 float GravityDel = 0.03;
 float friction = 0.99;
@@ -10,8 +12,7 @@ Shooter shooter;
 
 ArrayList<Target> hatOffs;
 ArrayList<Destroy> destroying;
-ArrayList<targetTwo> hatOffsTwo;
-ArrayList<destroyTwo> destroyingTwo;
+
 
 int interval = 1000;
 int time = 0;
@@ -21,21 +22,21 @@ void setup() {
   bg = loadImage("nightSky.png"); //image from https://savvycow.itch.io/loudypixelsky
   bg.resize(1200,800);
   ground = height;
+  gameStart = "START GAME";
   
   shooter = new Shooter(width/2, height - 100);
   hatOffs = new ArrayList<Target>();
   destroying = new ArrayList<Destroy>();
-  destroyingTwo = new ArrayList<destroyTwo>();
 
   destroy = loadImage("witchHatOff.png");
   destroy.resize(300, 300);
-  destroyTwo = loadImage("witchHatOff.png");
-  destroyTwo.resize(300, 300);
 }
+
 
 void draw() {
   background(bg);
-    
+
+  
   int s = millis();
   
   if (s > time + interval) {
@@ -68,8 +69,6 @@ void draw() {
   
   surface.setTitle("" + frameRate);
 }
-
-
 
   boolean hitDetect(PVector p1, PVector p2, PVector hit) {
   hit = hit.copy().div(2);

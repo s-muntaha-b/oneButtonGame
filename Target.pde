@@ -10,7 +10,8 @@ class Target{
 
   float movementSpeed = 0.007;
   float marginX = 550;
-  float marginY = 200;
+  float marginY = 100;
+ 
 
   Target() {
     hatTarget = loadImage("witchHatOn.png");
